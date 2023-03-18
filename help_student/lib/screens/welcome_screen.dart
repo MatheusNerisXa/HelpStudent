@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:help_student/screens/login_screen.dart';
+import 'package:help_student/screens/signup_screen.dart';
 import 'package:help_student/widgets/customized_button.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -16,7 +18,7 @@ class WelcomeScreen extends StatelessWidget {
         //   ),
         // ),
         child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           const SizedBox(
             height: 130,
@@ -33,13 +35,18 @@ class WelcomeScreen extends StatelessWidget {
           buttonText: "Login",
           buttonColor: Colors.black,
           textColor: Colors.white,
-          onPressed: (){},
+          onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (_)=> const LoginScreen()));
+          },
         ),
           CustomizedButton(
             buttonText: "Register",
             buttonColor: Colors.white,
             textColor: Colors.black,
-            onPressed: (){},
+            onPressed: (){
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const SignUpScreen()));
+            },
           ),
           SizedBox(
             height: 20,
